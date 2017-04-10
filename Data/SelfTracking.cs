@@ -9,8 +9,7 @@
 
         public bool WasModified
         {
-            get { return this.wasModified; }
-            set { this.SetWithNotify(value, ref this.wasModified); }
+            get => this.wasModified; set => this.SetWithNotify(value, ref this.wasModified);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

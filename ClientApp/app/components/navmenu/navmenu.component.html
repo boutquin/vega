@@ -18,6 +18,11 @@
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/vehicles/new']">
+                        <span class='glyphicon glyphicon-plus'></span> New Vehicle
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/counter']">
                         <span class='glyphicon glyphicon-education'></span> Counter
                     </a>
@@ -25,6 +30,11 @@
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/fetch-data']">
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/vehicles']">
+                        <span class='glyphicon glyphicon-road'></span> Makes/Models
                     </a>
                 </li>
             </ul>

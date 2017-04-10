@@ -1,0 +1,26 @@
+<h1>Vehicle Models</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!makes"><em>Loading...</em></p>
+
+<table class='table' *ngIf="makes">
+    <thead>
+        <tr>
+            <th>Make</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let make of makes">
+            <td>{{ make.name }}
+            <!-- -->
+            <ul *ngIf="make.models">
+                    <li *ngFor="let model of make.models">
+                        {{ model.name }}
+                    </li>
+            </ul>
+            <!-- -->
+        </td>
+    </tr>
+    </tbody>
+</table>

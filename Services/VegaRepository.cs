@@ -30,7 +30,9 @@
         public IEnumerable<Vega.Model.View.Make> GetMakes()
         {
             var makes = this.context.Makes
-                .Include(m => m.Models);
+                .Include(m => m.Models)
+                .ThenInclude(m => m.ModelFeatures)
+                .ThenInclude(mf => mf.Feature);
 
             return makes == null
                 ? null

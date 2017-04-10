@@ -48,6 +48,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.0",
     "@types/chai": "^3.4.34",
     "@types/jasmine": "^2.5.37",
     "chai": "^3.5.0",
