@@ -8,8 +8,8 @@
     using Microsoft.EntityFrameworkCore.Migrations;
 
     [DbContext(typeof(VegaContext))]
-    [Migration("00000000000000_Challenge3Model")]
-    partial class Challenge3Model
+    [Migration("00000000000000_Challenge2Model")]
+    partial class Challenge2Model
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,15 +122,21 @@
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ContactEMail")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.Property<string>("ContactName")
                         .IsRequired()
-                        .HasMaxLength(255);
+                        .HasMaxLength(50);
 
                     b.Property<string>("ContactPhone")
                         .IsRequired()
-                        .HasMaxLength(255);
+                        .HasMaxLength(50);
 
                     b.Property<DateTime>("CreatedOn");
+
+                    b.Property<bool>("IsRegistered");
 
                     b.Property<int>("ModelId");
 

@@ -73,11 +73,15 @@
             modelBuilder.Entity<Vehicle>()
                 .Property(v => v.ContactName)
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(50);
             modelBuilder.Entity<Vehicle>()
                 .Property(v => v.ContactPhone)
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(50);
+            modelBuilder.Entity<Vehicle>()
+                .Property(v => v.ContactEMail)
+                .IsRequired()
+                .HasMaxLength(50);
             modelBuilder.Entity<Vehicle>()
                 .HasAlternateKey(v => v.Name)
                 .HasName("UX_Vehicles_Name");

@@ -5,7 +5,7 @@
     using Microsoft.EntityFrameworkCore.Migrations;
     using Microsoft.EntityFrameworkCore.Metadata;
 
-    public partial class Challenge3Model : Migration
+    public partial class Challenge2Model : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,9 +68,11 @@
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ContactName = table.Column<string>(maxLength: 255, nullable: false),
-                    ContactPhone = table.Column<string>(maxLength: 255, nullable: false),
+                    ContactEMail = table.Column<string>(maxLength: 50, nullable: false),
+                    ContactName = table.Column<string>(maxLength: 50, nullable: false),
+                    ContactPhone = table.Column<string>(maxLength: 50, nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
+                    IsRegistered = table.Column<bool>(nullable: false),
                     ModelId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(maxLength: 50, nullable: false),
                     UpdatedOn = table.Column<DateTime>(nullable: false)

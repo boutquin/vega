@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Http } from "@angular/http";
 
+import { IMake } from "../../services/imake.interface";
+
 @Component({
     selector: "vehicles",
     templateUrl: "./vehicle.component.html"
@@ -13,15 +15,4 @@ export class VehicleComponent {
             this.makes = result.json() as IMake[];
         });
     }
-}
-
-interface IMake {
-    id: number;
-    name: string;
-    models: IModel[];
-}
-
-interface IModel {
-    id: number;
-    name: string;
 }
