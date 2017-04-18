@@ -16,7 +16,7 @@
             <option *ngFor="let model of models" value="{{ model.id }}">{{ model.name }}</option>
         </select>
     </div>
-    <p>Is this vehicle registered</p>
+    <p>Is this vehicle registered?</p>
     <label for="registered" class="radio-inline">
         <input type="radio" id="registered" name="isRegistered" value="true">Yes
     </label>
@@ -30,8 +30,20 @@
         </label>
     </div>
     <h2>Contact</h2>
-    <div class="form-group"><label for="contactName">Name<input id="contactName" type="text" class="form-control"></label></div>
-    <div class="form-group"><label for="contactPhone">Phone<input id="contactPhone"type="text" class="form-control"></label></div>
-    <div class="form-group"><label for="contactEmail">Email<input id="contactEmail" type="text" class="form-control"></label></div>
+    <div class="form-group">
+        <label for="contactName">Name
+            <input id="contactName" type="text" class="form-control">
+        </label
+    ></div>
+    <div class="form-group">
+        <label for="contactPhone">Phone
+            <input id="contactPhone"type="text" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="contactEmail">Email
+            <input id="contactEmail" type="text" class="form-control">
+        </label>
+    </div>
     <button class="btn btn-primary">Save</button>
 </form>
