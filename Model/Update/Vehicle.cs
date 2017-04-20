@@ -17,18 +17,9 @@
         public int ModelId { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string ContactName { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string ContactPhone { get; set; 
-        }
-        [Required]
-        [StringLength(50)]        
-        public string ContactEMail { get; set; }
+        public Contact Contact { get; set; }
 
         // A Vehicle has a collection of Features
-        public ICollection<Feature> Features { get; set; }
+        public ICollection<int> Features { get; set; }
     }
 }

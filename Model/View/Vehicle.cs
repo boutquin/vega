@@ -13,9 +13,7 @@
         // A Vehicle corresponds to a single Model.
         public Model Model { get; set; }
 
-        public string ContactName { get; set; }
-        public string ContactPhone { get; set; }
-        public string ContactEMail { get; set; }
+        public Contact Contact { get; set; }
 
         // A Vehicle has a collection of Features
         public ICollection<Feature> Features { get; set; }

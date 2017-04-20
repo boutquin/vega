@@ -52,17 +52,7 @@
 				throw new ArgumentNullException(nameof(vehicle));
 			}
 
-		    var vehicleToBeAdded = new Data.Vehicle
-		        {
-		            ModelId = vehicle.ModelId,
-		            Name = vehicle.Name,
-		            ContactEMail = vehicle.ContactEMail,
-		            ContactName = vehicle.ContactName,
-		            ContactPhone = vehicle.ContactPhone,
-		            IsRegistered = vehicle.IsRegistered
-		        };
-			var vehicleFeatures = vehicle.Features.Select(feature => new VehicleFeature { Vehicle = vehicleToBeAdded, FeatureId = feature.Id }).ToList();
-			vehicleToBeAdded.VehicleFeatures = vehicleFeatures;
+		    var vehicleToBeAdded = this.mapper.Map<Data.Vehicle>(vehicle);
 
 			this.context.Vehicles.Add(vehicleToBeAdded);
 
@@ -113,14 +103,7 @@
 
 			if (vehicleToUpdate == null) return null;
 
-			vehicleToUpdate.ModelId = vehicle.ModelId;
-			vehicleToUpdate.Name = vehicle.Name;
-			vehicleToUpdate.ContactEMail = vehicle.ContactEMail;
-			vehicleToUpdate.ContactName = vehicle.ContactName;
-			vehicleToUpdate.ContactPhone = vehicle.ContactPhone;
-			vehicleToUpdate.IsRegistered = vehicle.IsRegistered;
-			var vehicleFeatures = vehicle.Features.Select(feature => new VehicleFeature { VehicleId = vehicleToUpdate.Id, FeatureId = feature.Id }).ToList();
-			vehicleToUpdate.VehicleFeatures = vehicleFeatures;
+		    this.mapper.Map(vehicle, vehicleToUpdate);
 
 			return this.mapper.Map<Vehicle>(vehicleToUpdate);
 		}

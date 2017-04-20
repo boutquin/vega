@@ -47,12 +47,12 @@ namespace vega.Controllers
             }
 
 
-            foreach (var feature in vehicle.Features)
+            foreach (var id in vehicle.Features)
             {
-                if (!this.repository.FeatureValidForModel(vehicle.ModelId, feature.Id))
+                if (!this.repository.FeatureValidForModel(vehicle.ModelId, id))
                 {
                     this.ModelState.AddModelError(nameof(Vega.Model.Create.Vehicle),
-                        $"Feature {feature.Id} is not a valid feature for Model {vehicle.ModelId}.");
+                        $"Feature {id} is not a valid feature for Model {vehicle.ModelId}.");
                 }
             }
 
@@ -122,12 +122,12 @@ namespace vega.Controllers
             }
 
 
-            foreach (var feature in vehicle.Features)
+            foreach (var id in vehicle.Features)
             {
-                if (!this.repository.FeatureValidForModel(vehicle.ModelId, feature.Id))
+                if (!this.repository.FeatureValidForModel(vehicle.ModelId, id))
                 {
                     this.ModelState.AddModelError(nameof(Vega.Model.Create.Vehicle),
-                        $"Feature {feature.Id} is not a valid feature for Model {vehicle.ModelId}.");
+                        $"Feature {id} is not a valid feature for Model {vehicle.ModelId}.");
                 }
             }
 
